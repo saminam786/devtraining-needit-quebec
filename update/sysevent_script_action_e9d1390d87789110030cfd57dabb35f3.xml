@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script>current.priority != 1</condition_script>
+        <description/>
+        <event_name>x_58872_needit.overdueNeedItTask</event_name>
+        <name>Update Overdue NeedIt Task Priority</name>
+        <order>100</order>
+        <script><![CDATA[// Set the record priority to 1 - Critical
+current.priority = 1;
+// Update the record in the database
+current.setValue('description', 'Updated by Automation script');
+current.work_notes = 'Updated by Script - Priority increased to Critical - 1' + current.work_notes.getJournalEntry(1);
+current.update();
+
+/*current.setValue('work_notes','Updated by SetValue');
+current.work_notes = 'Updated by getJournalEntry(0) Script: ' + current.work_notes.getJournalEntry(0);
+current.work_notes = 'Updated by getJournalEntry(1) Script: ' + current.work_notes.getJournalEntry(1);
+current.work_notes = 'Updated by getJournalEntry(-1) Script: ' + current.work_notes.getJournalEntry(-1);
+current.work_notes.setJournalEntry('Testing');*/
+
+]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-18 09:35:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e9d1390d87789110030cfd57dabb35f3</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Update Overdue NeedIt Task Priority</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sysevent_script_action_e9d1390d87789110030cfd57dabb35f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-18 10:31:02</sys_updated_on>
+    </sysevent_script_action>
+</record_update>
